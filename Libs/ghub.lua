@@ -10,5 +10,5 @@ getgenv().itemscolor = Color3.fromRGB(120, 120, 120)
 getgenv().accentcolour = Color3.fromRGB(66, 74, 79)
 
 
-local library = loadstring(game:HttpGet("https://duxkyx.cf/Roblox/UiLibs/library.lua", true))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/duxkyx/scripts/main/Libs/ghublib.lua", true))()
 return library
