@@ -26,8 +26,8 @@ getgenv().cursor = true
 getgenv().outlinecolor = Color3.fromRGB(80, 80, 80)
 getgenv().toptextcolor = Color3.fromRGB(120, 120, 120)
 getgenv().itemscolor = Color3.fromRGB(120, 120, 120)
-getgenv().accentcolour = Color3.fromRGB(255,165,0)
-getgenv().accentcolour2 = Color3.fromRGB(255,165,0)
+getgenv().accentcolour = a
+getgenv().accentcolour2 = a
 
 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/duxkyx/scripts/main/Libs/ghublib.lua", true))()
