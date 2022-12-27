@@ -1,19 +1,18 @@
 -- 'Black', 'Purple', 'Blue', 'Green', 'Pink'
 local a
-if _G.Theme then
-    if _G.Theme == 'Black' then
-        a = Color3.fromRGB(0,0,0)
-    elseif _G.Theme == 'Purple' then
-        a = Color3.fromRGB(148,0,211)
-    elseif _G.Theme == 'Blue' then
-        a = Color3.fromRGB(0,191,255)
-    elseif _G.Theme == 'Green' then
-        a = Color3.fromRGB(50,205,50)
-    elseif _G.Theme == 'Pink' then
-        a = Color3.fromRGB(255,20,147)
-    end
+if _G.Theme == 'Black' then
+    a = Color3.fromRGB(0,0,0)
+elseif _G.Theme == 'Purple' then
+    a = Color3.fromRGB(148,0,211)
+elseif _G.Theme == 'Blue' then
+    a = Color3.fromRGB(0,191,255)
+elseif _G.Theme == 'Green' then
+    a = Color3.fromRGB(50,205,50)
+elseif _G.Theme == 'Pink' then
+    a = Color3.fromRGB(255,20,147)
 else
     a = Color3.fromRGB(148,0,211)
+    print('No theme supplied...')
 end
 
 
