@@ -158,7 +158,6 @@ function library:CreateWatermark(name, position)
         watermark.topbar.Visible = watermark.Visible
         watermark.Outline.Visible = watermark.Visible
         watermark.BlackOutline.Visible = watermark.Visible
-	watermark.label.Text = 'Duxkyx-Ware | '..getgenv().FPS..' | '..getgenv().PING..' | '..getgenv().HOUR..':'..getgenv().MIN
     end)
 
     watermark.mainbar.MouseEnter:Connect(function()
@@ -183,6 +182,14 @@ function library:CreateWatermark(name, position)
         watermark.BlackOutline.BackgroundColor3 = theme.outlinecolor2
         watermark.label.Font = theme.font
         watermark.topbar.BackgroundColor3 = theme.accentcolor
+    end
+	
+    function watermark:Update(text)
+	local fps = game.Stats.Workspace.Heartbeat:GetValueString()
+	local ping = game.Stats.Network.ServerStatsItem["Data Ping"]:GetValueString()
+	local hour = os.date("*t")["hour"]
+	local min = os.date("*t")["min"]
+	watermark.label.Text = 'Duxkyx-Ware | '..fps..' | '..ping..' | '..hour..':'..min
     end
 
     return watermark
