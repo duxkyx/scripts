@@ -1,4 +1,4 @@
--- (WARNING: This Repository is Licensed! You are not permitted to use/copy this User Interface library)
+-- I didn't make this i just found it on v3rm but the loadstring was giving me a brain fuck so I decided to put it in my own github thing.
 local library = { 
 	flags = { }, 
 	items = { } 
