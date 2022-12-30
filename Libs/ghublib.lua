@@ -75,7 +75,7 @@ function library:CreateWatermark(name, position)
     local gamename = marketplaceservice:GetProductInfo(game.PlaceId).Name
     local watermark = { }
     watermark.Visible = true
-    watermark.text = " " .. name:gsub("{game}", gamename):gsub("{fps}", "0 FPS") .. " "
+    watermark.text = getgenv().watermark
 
     watermark.main = Instance.new("ScreenGui", coregui)
     watermark.main.Name = "Watermark"
@@ -126,7 +126,7 @@ function library:CreateWatermark(name, position)
     watermark.label.Font = library.theme.font
     watermark.label.ZIndex = 6
     watermark.label.Visible = watermark.Visible
-    watermark.label.Text = watermark.text
+    watermark.label.Text = 'Duxkyx-Ware | '..getgenv().FPS..' | '..getgenv().PING
     watermark.label.TextColor3 = Color3.fromRGB(255, 255, 255)
     watermark.label.TextSize = 15
     watermark.label.TextStrokeTransparency = 0.000
@@ -161,7 +161,7 @@ function library:CreateWatermark(name, position)
         watermark.BlackOutline.Visible = watermark.Visible
 
         if not name:find("{fps}") then
-            watermark.label.Text = " " .. name:gsub("{game}", gamename):gsub("{fps}", "0 FPS") .. " "
+            watermark.label.Text = getgenv().watermark
         end
 
         if name:find("{fps}") then
@@ -173,7 +173,7 @@ function library:CreateWatermark(name, position)
                 startTime = currentTime
 
                 if fps ~= oldfps then
-                    watermark.label.Text = " " .. name:gsub("{game}", gamename):gsub("{fps}", fps .. " FPS") .. " "
+                    watermark.label.Text = getgenv().watermark
         
                     watermark.label.Size = UDim2.new(0, watermark.label.TextBounds.X+10, 0, 25)
                     watermark.mainbar.Size = UDim2.new(0, watermark.label.TextBounds.X, 0, 25)
