@@ -186,10 +186,10 @@ function library:CreateWatermark(name, position)
 	
     function watermark:Update(text)
 	local fps = game.Stats.Workspace.Heartbeat:GetValueString()
-	local ping = game.Stats.Network.ServerStatsItem["Data Ping"]:GetValueString()
+	local ping = math.round(game.Players.LocalPlayer:GetNetworkPing() * 2 * 1000)
 	local hour = os.date("*t")["hour"]
 	local min = os.date("*t")["min"]
-	watermark.label.Text = 'Duxkyx-Ware | '..fps..' | '..ping..' | '..hour..':'..min
+	watermark.label.Text = 'Duxkyx-Ware | '..fps..' fps | '..ping..' ms | '..hour..':'..min
     end
 
     return watermark
