@@ -136,6 +136,7 @@ function library:CreateWatermark(name, position)
     watermark.label.Text = watermark.text
     watermark.label.TextColor3 = Color3.fromRGB(255, 255, 255)
     watermark.label.TextSize = 15
+    watermark.label.TextScaled = true
     watermark.label.TextStrokeTransparency = 0.000
     watermark.label.TextXAlignment = Enum.TextXAlignment.Left
     watermark.label.Size = UDim2.new(0, watermark.label.TextBounds.X+10, 0, 25)
