@@ -75,7 +75,7 @@ function library:CreateWatermark(name, position)
     local gamename = marketplaceservice:GetProductInfo(game.PlaceId).Name
     local watermark = { }
     watermark.Visible = true
-    watermark.text = getgenv().watermarktextndat
+    watermark.text = 'Duxkyx-Ware | '..getgenv().FPS..' | '..getgenv().PING..' | '..getgenv().HOUR..':'..getgenv().MIN
 
     watermark.main = Instance.new("ScreenGui", coregui)
     watermark.main.Name = "Watermark"
@@ -152,14 +152,13 @@ function library:CreateWatermark(name, position)
     watermark.Outline.Size = watermark.mainbar.Size + UDim2.fromOffset(2, 2)
     watermark.BlackOutline.Size = watermark.mainbar.Size + UDim2.fromOffset(4, 4)
 
-    local startTime, counter, oldfps = os.clock(), 0, nil
     runservice.Heartbeat:Connect(function()
         watermark.label.Visible = watermark.Visible
         watermark.mainbar.Visible = watermark.Visible
         watermark.topbar.Visible = watermark.Visible
         watermark.Outline.Visible = watermark.Visible
         watermark.BlackOutline.Visible = watermark.Visible
-	watermark.label.Text = getgenv().watermarktextndat
+	watermark.label.Text = 'Duxkyx-Ware | '..getgenv().FPS..' | '..getgenv().PING..' | '..getgenv().HOUR..':'..getgenv().MIN
     end)
 
     watermark.mainbar.MouseEnter:Connect(function()
