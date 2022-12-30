@@ -102,7 +102,7 @@ function library:CreateWatermark(name, position)
 	--UDim2.new(0, position and position.X or 0, 0, position and position.Y or 10)
     watermark.mainbar.AnchorPoint = Vector2.new(0.5,0.5)
     watermark.mainbar.Position = UDim2.new(0.5,0.5)
-    watermark.mainbar.Size = UDim2.new(0, 0, 0, 25)
+    watermark.mainbar.Size = UDim2.new(0, 0, 0, 35)
 
     watermark.Gradient = Instance.new("UIGradient", watermark.mainbar)
     watermark.Gradient.Rotation = 90
