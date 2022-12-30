@@ -17,7 +17,7 @@ end
 
 getgenv().FPS = ""
 getgenv().PING = ""
-getgenv().watermark = 'Duxkyx-Ware | '..getgenv().FPS..' | '..getgenv().PING
+getgenv().watermarktext = 'Duxkyx-Ware | '..getgenv().FPS..' | '..getgenv().PING
 getgenv().fontsize = 15
 getgenv().titlesize = 15
 getgenv().font = Enum.Font.Code
