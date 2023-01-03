@@ -165,6 +165,10 @@ function library:CreateWatermark(name, position)
         watermark.topbar.Visible = watermark.Visible
         watermark.Outline.Visible = watermark.Visible
         watermark.BlackOutline.Visible = watermark.Visible
+			
+	fps = game.Stats.Workspace.Heartbeat:GetValueString()
+	ping = math.round(game.Players.LocalPlayer:GetNetworkPing() * 2 * 1000)
+	watermark.label.Text = 'Duxkyx-Ware | '..fps..' fps | '..ping..' ms'
     end)
 
     watermark.mainbar.MouseEnter:Connect(function()
