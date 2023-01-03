@@ -340,6 +340,7 @@ function library:CreateWindow(name, size, hidebutton)
     window.NameLabel.TextColor3 = window.theme.toptextcolor
     window.NameLabel.Text = window.name
     window.NameLabel.TextXAlignment = Enum.TextXAlignment.Left
+    window.NameLabel.TextYAlignment = Enum.TextYAlignment.Center
     window.NameLabel.Font = window.theme.font
     window.NameLabel.Name = "title"
     window.NameLabel.Position = UDim2.fromOffset(4, -2)
