@@ -23,7 +23,7 @@ getgenv().backgroundcolour = Color3.fromRGB(20, 20, 20)
 getgenv().cursor = true
 getgenv().outlinecolor = Color3.fromRGB(80, 80, 80)
 getgenv().toptextcolor = Color3.fromRGB(120, 120, 120)
-getgenv().itemscolor = a
+getgenv().itemscolor = Color3.fromRGB(120, 120, 120)
 getgenv().accentcolour = a
 getgenv().accentcolour2 = a
 
