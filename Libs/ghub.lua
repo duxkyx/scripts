@@ -15,11 +15,6 @@ else
     print('No theme supplied...')
 end
 
-getgenv().HOUR = os.date("*t")["hour"]
-getgenv().MIN = os.date("*t")["min"]
-getgenv().FPS = ""
-getgenv().PING = ""
-getgenv().watermarktextndat = 'Duxkyx-Ware | '..getgenv().FPS..' | '..getgenv().PING..' | '..getgenv().HOUR..':'..getgenv().MIN
 getgenv().fontsize = 15
 getgenv().titlesize = 13
 getgenv().font = Enum.Font.Code
@@ -28,7 +23,7 @@ getgenv().backgroundcolour = Color3.fromRGB(20, 20, 20)
 getgenv().cursor = true
 getgenv().outlinecolor = Color3.fromRGB(80, 80, 80)
 getgenv().toptextcolor = Color3.fromRGB(120, 120, 120)
-getgenv().itemscolor = Color3.fromRGB(120, 120, 120)
+getgenv().itemscolor = a
 getgenv().accentcolour = a
 getgenv().accentcolour2 = a
 
