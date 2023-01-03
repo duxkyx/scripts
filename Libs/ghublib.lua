@@ -80,7 +80,7 @@ function library:CreateWatermark(name, position)
     local gamename = marketplaceservice:GetProductInfo(game.PlaceId).Name
     local watermark = { }
     watermark.Visible = true
-    watermark.text = 'Duxkyx-Ware | '..fps..' fps | '..ping..' ms | '..hour..':'..min
+    watermark.text = 'Duxkyx-Ware | '..fps..' fps | '..ping..' ms'
 
     watermark.main = Instance.new("ScreenGui", coregui)
     watermark.main.Name = "Watermark"
@@ -194,9 +194,7 @@ function library:CreateWatermark(name, position)
     function watermark:Update(text)
 	fps = game.Stats.Workspace.Heartbeat:GetValueString()
 	ping = math.round(game.Players.LocalPlayer:GetNetworkPing() * 2 * 1000)
-	hour = os.date("*t")["hour"]
-	min = os.date("*t")["min"]
-	watermark.label.Text = 'Duxkyx-Ware | '..fps..' fps | '..ping..' ms | '..hour..':'..min
+	watermark.label.Text = 'Duxkyx-Ware | '..fps..' fps | '..ping..' ms'
     end
 
     return watermark
