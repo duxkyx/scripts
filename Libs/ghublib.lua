@@ -3514,7 +3514,6 @@ function library:CreateWindow(name, size, hidebutton)
             return configSystem
         end
 
-	--[[
         function tab:CreatePlayerlist(name)
             local list = { }
             list.name = name or ""
@@ -3634,7 +3633,6 @@ function library:CreateWindow(name, size, hidebutton)
         table.insert(window.Tabs, tab)
         return tab
     end
-    ]]
 
     return window
 end
