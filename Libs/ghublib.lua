@@ -80,7 +80,7 @@ function library:CreateWatermark(name, position)
     local gamename = marketplaceservice:GetProductInfo(game.PlaceId).Name
     local watermark = { }
     watermark.Visible = true
-    watermark.text = 'Duxkyx-Ware | '..fps..' fps | '..ping..' ms | '..hour..':'..min
+    watermark.text = 'Duxkyx-Ware | '..fps..' fps | '..ping..' ms'
 
     watermark.main = Instance.new("ScreenGui", coregui)
     watermark.main.Name = "Watermark"
