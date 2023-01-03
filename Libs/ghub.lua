@@ -16,7 +16,7 @@ else
 end
 
 getgenv().fontsize = 15
-getgenv().titlesize = 13
+getgenv().titlesize = 15
 getgenv().font = Enum.Font.Code
 getgenv().background = "rbxassetid://6880496154"
 getgenv().backgroundcolour = Color3.fromRGB(20, 20, 20)
