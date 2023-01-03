@@ -99,7 +99,6 @@ function library:CreateWatermark(name, position)
     watermark.mainbar.Visible = watermark.Visible
     watermark.mainbar.BorderSizePixel = 0
     watermark.mainbar.ZIndex = 5
-	--UDim2.new(0, position and position.X or 0, 0, position and position.Y or 10)
     watermark.mainbar.AnchorPoint = Vector2.new(0.5,0.5)
     watermark.mainbar.Position = UDim2.new(0.5,0.5)
     watermark.mainbar.Size = UDim2.new(0, 0, 0, 35)
@@ -160,15 +159,15 @@ function library:CreateWatermark(name, position)
     watermark.BlackOutline.Size = watermark.mainbar.Size + UDim2.fromOffset(4, 4)
 
     runservice.Heartbeat:Connect(function()
+	fps = game.Stats.Workspace.Heartbeat:GetValueString()
+	ping = math.round(game.Players.LocalPlayer:GetNetworkPing() * 2 * 1000)
+	watermark.label.Text = 'Duxkyx-Ware | '..fps..' fps | '..ping..' ms'
+		
         watermark.label.Visible = watermark.Visible
         watermark.mainbar.Visible = watermark.Visible
         watermark.topbar.Visible = watermark.Visible
         watermark.Outline.Visible = watermark.Visible
         watermark.BlackOutline.Visible = watermark.Visible
-			
-	fps = game.Stats.Workspace.Heartbeat:GetValueString()
-	ping = math.round(game.Players.LocalPlayer:GetNetworkPing() * 2 * 1000)
-	watermark.label.Text = 'Duxkyx-Ware | '..fps..' fps | '..ping..' ms'
     end)
 
     watermark.mainbar.MouseEnter:Connect(function()
