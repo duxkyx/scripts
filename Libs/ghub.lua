@@ -11,7 +11,7 @@ elseif _G.Theme == 'Green' then
 elseif _G.Theme == 'Pink' then
     a = Color3.fromRGB(255,20,147)
 else
-    a = Color3.fromRGB(148,0,211)
+    a = Color3.fromRGB(0,0,0)
     print('No theme supplied...')
 end
 
