@@ -19,29 +19,29 @@ local mouse = player:GetMouse()
 local camera = game.Workspace.CurrentCamera
 
 library.theme = {
-    fontsize = getgenv().fontsize or 15,
-    titlesize = getgenv().titlesize or 15,
-    font = getgenv().font or Enum.Font.Code,
-    background = getgenv().background or "rbxassetid://6880496154",
+    fontsize = getgenv().fontsize,
+    titlesize = getgenv().titlesize,
+    font = getgenv().font,
+    background = getgenv().background,
     tilesize = 90,
-    cursor = getgenv().cursor or true,
+    cursor = getgenv().cursor,
     cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
-    backgroundcolor = getgenv().backgroundcolour or Color3.fromRGB(20, 20, 20),
+    backgroundcolor = getgenv().backgroundcolour,
     tabstextcolor = Color3.fromRGB(240, 240, 240),
     bordercolor = Color3.fromRGB(60, 60, 60),
-    accentcolor = getgenv().accentcolour or Color3.fromRGB(255,20,147),
-    accentcolor2 = getgenv().accentcolour2 or Color3.fromRGB(255,20,147),
-    outlinecolor = getgenv().outlinecolor or Color3.fromRGB(80, 80, 80),
+    accentcolor = getgenv().accentcolour,
+    accentcolor2 = getgenv().accentcolour2,
+    outlinecolor = getgenv().outlinecolor,
     outlinecolor2 = Color3.fromRGB(0, 0, 0),
     sectorcolor = Color3.fromRGB(30, 30, 30),
-    toptextcolor = getgenv().toptextcolor or Color3.fromRGB(120, 120, 120),
+    toptextcolor = getgenv().toptextcolor,
     topheight = 48,
     topcolor = Color3.fromRGB(30, 30, 30),
     topcolor2 = Color3.fromRGB(30, 30, 30),
     buttoncolor = Color3.fromRGB(49, 49, 49),
     buttoncolor2 = Color3.fromRGB(39, 39, 39),
-    itemscolor = getgenv().itemscolor or Color3.fromRGB(255,20,147),
-    itemscolor2 = getgenv().itemscolor or Color3.fromRGB(255,20,147)
+    itemscolor = getgenv().itemscolor,
+    itemscolor2 = getgenv().itemscolor
 }
 
 if library.theme.cursor and Drawing then
@@ -80,7 +80,7 @@ function library:CreateWatermark(name, position)
     local gamename = marketplaceservice:GetProductInfo(game.PlaceId).Name
     local watermark = { }
     watermark.Visible = true
-    watermark.text = 'Duxkyx-Ware | '..fps..' fps | '..ping..' ms'
+    watermark.text = 'Duxkyx-Ware | '..fps..' fps | '..ping..' ms | '..hour..':'..min
 
     watermark.main = Instance.new("ScreenGui", coregui)
     watermark.main.Name = "Watermark"
