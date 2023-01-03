@@ -344,7 +344,7 @@ function library:CreateWindow(name, size, hidebutton)
     window.NameLabel.Name = "title"
     window.NameLabel.Position = UDim2.fromOffset(4, -2)
     window.NameLabel.BackgroundTransparency = 1
-    window.NameLabel.Size = UDim2.fromOffset(190, window.TopBar.AbsoluteSize.Y / 2 - 2)
+    window.NameLabel.Size = UDim2.fromOffset(492, window.TopBar.AbsoluteSize.Y / 2 - 2)
     window.NameLabel.TextSize = window.theme.titlesize
     updateevent.Event:Connect(function(theme)
         window.NameLabel.TextColor3 = theme.toptextcolor
