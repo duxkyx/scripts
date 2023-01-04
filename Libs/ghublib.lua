@@ -184,12 +184,6 @@ function library:CreateWatermark(name, position)
         watermark.label.Font = theme.font
         watermark.topbar.BackgroundColor3 = theme.accentcolor
     end
-	
-    function watermark:Update(text)
-	fps = game.Stats.Workspace.Heartbeat:GetValueString()
-	ping = math.round(game.Players.LocalPlayer:GetNetworkPing() * 2 * 1000)
-	watermark.label.Text = 'Duxkyx-Ware | '..fps..' fps | '..ping..' ms'
-    end
 
     return watermark
 end
