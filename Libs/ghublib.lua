@@ -71,16 +71,11 @@ if library.theme.cursor and Drawing then
     end
 end
 
-local fps = game.Stats.Workspace.Heartbeat:GetValueString()
-local ping = math.round(game.Players.LocalPlayer:GetNetworkPing() * 2 * 1000)
-local hour = os.date("*t")["hour"]
-local min = os.date("*t")["min"]
-
 function library:CreateWatermark(name, position)
     local gamename = marketplaceservice:GetProductInfo(game.PlaceId).Name
     local watermark = { }
     watermark.Visible = true
-    watermark.text = 'Duxkyx-Ware | '..fps..' fps | '..ping..' ms'
+    watermark.text = 'Duxkyx-Ware'
 
     watermark.main = Instance.new("ScreenGui", coregui)
     watermark.main.Name = "Watermark"
@@ -158,11 +153,7 @@ function library:CreateWatermark(name, position)
     watermark.Outline.Size = watermark.mainbar.Size + UDim2.fromOffset(2, 2)
     watermark.BlackOutline.Size = watermark.mainbar.Size + UDim2.fromOffset(4, 4)
 
-    runservice.Heartbeat:Connect(function()
-	fps = game.Stats.Workspace.Heartbeat:GetValueString()
-	ping = math.round(game.Players.LocalPlayer:GetNetworkPing() * 2 * 1000)
-	watermark.label.Text = 'Duxkyx-Ware | '..fps..' fps | '..ping..' ms'
-		
+    runservice.:Connect(function()
         watermark.label.Visible = watermark.Visible
         watermark.mainbar.Visible = watermark.Visible
         watermark.topbar.Visible = watermark.Visible
