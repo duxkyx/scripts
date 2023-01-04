@@ -153,7 +153,7 @@ function library:CreateWatermark(name, position)
     watermark.Outline.Size = watermark.mainbar.Size + UDim2.fromOffset(2, 2)
     watermark.BlackOutline.Size = watermark.mainbar.Size + UDim2.fromOffset(4, 4)
 
-    runservice.:Connect(function()
+    runservice.Heartbeat:Connect(function()
         watermark.label.Visible = watermark.Visible
         watermark.mainbar.Visible = watermark.Visible
         watermark.topbar.Visible = watermark.Visible
