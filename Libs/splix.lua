@@ -2448,7 +2448,6 @@ do
                         if utility:MouseOverDrawing({v[2].Position.X, v[2].Position.Y, v[2].Position.X + v[2].Size.X, v[2].Position.Y + v[2].Size.Y}) and v[1].Text ~= dropdown.current then
                             dropdown.current = v[1].Text
 			    callback(dropdown.current)
-			    print('Dropdown called...')
                             dropdown_value.Text = dropdown.current
                             dropdown:Update()
                         end
