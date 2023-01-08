@@ -2437,13 +2437,20 @@ do
             if typeof(value) == "string" and table.find(options, value) then
                 dropdown.current = value
                 dropdown_value.Text = value
-                callback(dropdown.current)
             end
         end
         --
         function dropdown:Get()
             return dropdown.current
         end
+		
+	function dropdown:Add(v)
+	    table.insert(options, v)
+	end
+		
+	function dropdown:Clear()
+	    table.clear(options)
+	end
         --
         library.began[#library.began + 1] = function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and window.isVisible and dropdown_outline.Visible then
@@ -2483,16 +2490,6 @@ do
                                 Color = theme.light_contrast,
                                 Visible = page.open
                             }, dropdown.holder.drawings)
-                            --[[
-                            local dropdown_value_gradient = utility:Create("Image", {Vector2.new(0,0), dropdown_value_frame}, {
-                                Size = utility:Size(1, 0, 1, 0, dropdown_value_frame),
-                                Position = utility:Position(0, 0, 0 , 0, dropdown_value_frame),
-                                Transparency = 0.5,
-                                Visible = page.open
-                            }, dropdown.holder.drawings)
-                            --
-                            utility:LoadImage(dropdown_value_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")]]
-                            --
                             local dropdown_value = utility:Create("TextLabel", {Vector2.new(v == tostring(dropdown.current) and 8 or 6,2), dropdown_value_frame}, {
                                 Text = v,
                                 Size = theme.textsize,
