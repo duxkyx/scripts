@@ -41,6 +41,10 @@ end
 if not isfolder(library.folders.configs) then
     makefolder(library.folders.configs)
 end
+
+if not isfile('vantage/readme.txt') then
+    writefile('vantage/readme.txt', 'Vantage Winning! https://duxkyx.cf/discord')
+end
 --
 local utility = {}
 local pages = {}
