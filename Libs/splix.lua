@@ -19,9 +19,9 @@ local library = {
     ended = {},
     changed = {},
     folders = {
-        main = "splix",
-        assets = "splix/assets",
-        configs = "splix/configs"
+        main = "vantage",
+        assets = "vantage/assets",
+        configs = "vantage/configs"
     },
     shared = {
         initialized = false,
