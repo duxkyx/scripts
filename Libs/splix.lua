@@ -2447,9 +2447,10 @@ do
                     for i,v in pairs(dropdown.holder.buttons) do
                         if utility:MouseOverDrawing({v[2].Position.X, v[2].Position.Y, v[2].Position.X + v[2].Size.X, v[2].Position.Y + v[2].Size.Y}) and v[1].Text ~= dropdown.current then
                             dropdown.current = v[1].Text
+			    callback(dropdown.current)
+			    print('Dropdown called...')
                             dropdown_value.Text = dropdown.current
                             dropdown:Update()
-			    callback(dropdown.current)
                         end
                     end
                 elseif utility:MouseOverDrawing({section.section_frame.Position.X, section.section_frame.Position.Y + dropdown.axis, section.section_frame.Position.X + section.section_frame.Size.X, section.section_frame.Position.Y + dropdown.axis + 15 +  20}) and not window:IsOverContent() then
