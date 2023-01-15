@@ -35,3 +35,5 @@ local notify(Title, Content, Time)
     wait(0.6)
     GUI:Destroy();
 end
+
+return notify
