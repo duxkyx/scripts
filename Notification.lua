@@ -1,4 +1,5 @@
-local notify(Title, Content, Time)
+local utilities = {}
+local utilities:notify(Title, Content, Time)
     local GUI = Instance.new("ScreenGui")
     local Main = Instance.new("Frame", GUI)
     local title = Instance.new("TextLabel", Main)
@@ -36,4 +37,4 @@ local notify(Title, Content, Time)
     GUI:Destroy();
 end
 
-return notify
+return utilities
