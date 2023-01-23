@@ -699,7 +699,7 @@ do
         end
         --
         function window:KeybindsList(info)
-            window.keybindslist = {visible = false, keybinds = {}}
+            window.keybindslist = {visible = true, keybinds = {}}
             --
             local info = info or {}
             --
