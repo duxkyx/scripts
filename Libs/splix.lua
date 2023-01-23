@@ -612,7 +612,7 @@ do
             --
             local watermark_outline = utility:Create("Frame", {Vector2.new(100,38/2-10)}, {
                 Size = utility:Size(0, text_bounds.X+20, 0, 21),
-                Position = utility:Position(0, 100, 0, 38/2-10),
+                Position = utility:Position(0, 1200, 0, 38/2-10),
                 Hidden = true,
                 ZIndex = 60,
                 Color = theme.outline,
