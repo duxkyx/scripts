@@ -690,7 +690,7 @@ do
             --
             spawn(function()
                 while wait(0.1) do
-                    watermark_title.Text = string.format("$$ Splix || uid: %u || ping : %i || fps : %u", getgenv().tags, tostring(library.shared.ping), library.shared.fps)
+                    watermark_title.Text = string.format("$$ Splix || %s || ping : %i || fps : %u", getgenv().tags, tostring(library.shared.ping), library.shared.fps)
                     window.watermark:UpdateSize()
                 end
             end)
