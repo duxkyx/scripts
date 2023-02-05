@@ -449,8 +449,16 @@ do
             --
             for i,v in pairs(library.pointers) do
 		if typeof(v:Get()) == "table" and v:Get().Transparency then
-		    local hue, sat, val = v:Get().Color:ToHSV()
-		    config[i] = {Color = {hue, sat, val}, Transparency = v:Get().Transparency}
+		    local suc, err = pcall(function()
+		    	local hue, sat, val = v:Get().Color:ToHSV()
+		    	config[i] = {Color = {hue, sat, val}, Transparency = v:Get().Transparency}
+		    end)
+		    if suc then
+			local hue, sat, val = v:Get().Color:ToHSV()
+		    	config[i] = {Color = {hue, sat, val}, Transparency = v:Get().Transparency}
+		    else
+			print(i, ' Had an error!')		
+	            end
 		else
 		    config[i] = v:Get()
 		end		
