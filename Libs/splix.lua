@@ -460,7 +460,14 @@ do
 			print(i, ' Had an error!')		
 	            end
 		else
-		    config[i] = v:Get()
+		    local succ, errr = pcall(function()
+		        config[i] = v:Get()			
+		    end
+		    if succ then
+			config[i] = v:Get()
+		    else
+			print(i, ' Had an error!')
+		    end
 		end		
             end
             --
