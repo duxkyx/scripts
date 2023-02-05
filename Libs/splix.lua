@@ -894,6 +894,195 @@ do
                 window.keybindslist:Resort()
             end)
         end
+		
+	function window:SpectatorList(info)
+            window.spectatorlist = {visible = true, keybinds = {}}
+            --
+            local info = info or {}
+            --
+            local keybindslist_outline = utility:Create("Frame", {Vector2.new(10,(utility:GetScreenSize().Y/2)-200)}, {
+                Size = utility:Size(0, 150, 0, 22),
+                Position = utility:Position(0, 10, 0.4, 0),
+                Hidden = true,
+                ZIndex = 55,
+                Color = theme.outline,
+                Visible = window.keybindslist.visible
+            })window.keybindslist.outline = keybindslist_outline
+            --
+            local keybindslist_inline = utility:Create("Frame", {Vector2.new(1,1), keybindslist_outline}, {
+                Size = utility:Size(1, -2, 1, -2, keybindslist_outline),
+                Position = utility:Position(0, 1, 0, 1, keybindslist_outline),
+                Hidden = true,
+                ZIndex = 55,
+                Color = theme.inline,
+                Visible = window.keybindslist.visible
+            })
+            --
+            local keybindslist_frame = utility:Create("Frame", {Vector2.new(1,1), keybindslist_inline}, {
+                Size = utility:Size(1, -2, 1, -2, keybindslist_inline),
+                Position = utility:Position(0, 1, 0, 1, keybindslist_inline),
+                Hidden = true,
+                ZIndex = 55,
+                Color = theme.light_contrast,
+                Visible = window.keybindslist.visible
+            })
+            --
+            local keybindslist_accent = utility:Create("Frame", {Vector2.new(0,0), keybindslist_frame}, {
+                Size = utility:Size(1, 0, 0, 1, keybindslist_frame),
+                Position = utility:Position(0, 0, 0, 0, keybindslist_frame),
+                Hidden = true,
+                ZIndex = 55,
+                Color = theme.accent,
+                Visible = window.keybindslist.visible
+            })
+            --
+            local keybindslist_title = utility:Create("TextLabel", {Vector2.new(keybindslist_outline.Size.X/2,4), keybindslist_outline}, {
+                Text = "- Spectators -",
+                Size = theme.textsize,
+                Font = theme.font,
+                Color = theme.textcolor,
+                OutlineColor = theme.textborder,
+                Center = true,
+                Hidden = true,
+                ZIndex = 55,
+                Position = utility:Position(0.5, 0, 0, 5, keybindslist_outline),
+                Visible = window.keybindslist.visible
+            })
+            --
+            function window.keybindslist:Resort()
+                local index = 0
+                for i,v in pairs(window.keybindslist.keybinds) do
+                    v:Move(0 + (index*17))
+                    --
+                    index = index + 1
+                end
+            end
+            --
+            function window.spectatorlist:Add(keybindname, keybindvalue)
+                if keybindname and keybindvalue and not window.keybindslist.keybinds[keybindname] then
+                    local keybindTable = {}
+                    --
+                    local keybind_outline = utility:Create("Frame", {Vector2.new(0,keybindslist_outline.Size.Y-1), keybindslist_outline}, {
+                        Size = utility:Size(1, 0, 0, 18, keybindslist_outline),
+                        Position = utility:Position(0, 0, 1, -1, keybindslist_outline),
+                        Hidden = true,
+                        ZIndex = 55,
+                        Color = theme.outline,
+                        Visible = window.keybindslist.visible
+                    })
+                    --
+                    local keybind_inline = utility:Create("Frame", {Vector2.new(1,1), keybind_outline}, {
+                        Size = utility:Size(1, -2, 1, -2, keybind_outline),
+                        Position = utility:Position(0, 1, 0, 1, keybind_outline),
+                        Hidden = true,
+                        ZIndex = 55,
+                        Color = theme.inline,
+                        Visible = window.keybindslist.visible
+                    })
+                    --
+                    local keybind_frame = utility:Create("Frame", {Vector2.new(1,1), keybind_inline}, {
+                        Size = utility:Size(1, -2, 1, -2, keybind_inline),
+                        Position = utility:Position(0, 1, 0, 1, keybind_inline),
+                        Hidden = true,
+                        ZIndex = 55,
+                        Color = theme.dark_contrast,
+                        Visible = window.keybindslist.visible
+                    })
+                    --
+                    local keybind_title = utility:Create("TextLabel", {Vector2.new(4,3), keybind_outline}, {
+                        Text = keybindname,
+                        Size = theme.textsize,
+                        Font = theme.font,
+                        Color = theme.textcolor,
+                        OutlineColor = theme.textborder,
+                        Center = false,
+                        Hidden = true,
+                        ZIndex = 55,
+                        Position = utility:Position(0, 4, 0, 3, keybind_outline),
+                        Visible = window.keybindslist.visible
+                    })
+                    --
+                    local keybind_value = utility:Create("TextLabel", {Vector2.new(keybind_outline.Size.X - 4 - utility:GetTextBounds(keybindname, theme.textsize, theme.font).X,3), keybind_outline}, {
+                        Text = '.',
+                        Size = theme.textsize,
+                        Font = theme.font,
+                        Color = theme.textcolor,
+                        OutlineColor = theme.textborder,
+                        Hidden = true,
+                        ZIndex = 55,
+                        Position = utility:Position(1, -4 - utility:GetTextBounds(keybindname, theme.textsize, theme.font).X, 0, 3, keybind_outline),
+                        Visible = window.keybindslist.visible
+                    })
+                    --
+                    function keybindTable:Move(yPos)
+                        keybind_outline.Position = utility:Position(0, 0, 1, -1 + yPos, keybindslist_outline)
+                        keybind_inline.Position = utility:Position(0, 1, 0, 1, keybind_outline)
+                        keybind_frame.Position = utility:Position(0, 1, 0, 1, keybind_inline)
+                        keybind_title.Position = utility:Position(0, 4, 0, 3, keybind_outline)
+                        keybind_value.Position = utility:Position(1, -4 - keybind_value.TextBounds.X, 0, 3, keybind_outline)
+                    end
+                    --
+                    function keybindTable:Remove()
+                        utility:Remove(keybind_outline, true)
+                        utility:Remove(keybind_inline, true)
+                        utility:Remove(keybind_frame, true)
+                        utility:Remove(keybind_title, true)
+                        utility:Remove(keybind_value, true)
+                        --
+                        window.spectatorlist.keybinds[keybindname] = nil
+                        keybindTable = nil
+                    end
+                    --
+                    function keybindTable:Visibility()
+                        keybind_outline.Visible = window.spectatorlist.visible
+                        keybind_inline.Visible = window.spectatorlist.visible
+                        keybind_frame.Visible = window.spectatorlist.visible
+                        keybind_title.Visible = window.spectatorlist.visible
+                        keybind_value.Visible = window.spectatorlist.visible
+                    end
+                    --
+                    window.spectatorlist.keybinds[keybindname] = keybindTable
+                    window.spectatorlist:Resort()
+                end
+            end
+            --
+            function window.spectatorlist:Remove(keybindname)
+                if keybindname and window.spectatorlist.keybinds[keybindname] then
+                    window.spectatorlist.keybinds[keybindname]:Remove()
+                    window.spectatorlist.keybinds[keybindname] = nil
+                    window.spectatorlist:Resort()
+                end
+            end
+            --
+            function window.spectatorlist:Visibility()
+                keybindslist_outline.Visible = window.spectatorlist.visible
+                keybindslist_inline.Visible = window.spectatorlist.visible
+                keybindslist_frame.Visible = window.spectatorlist.visible
+                keybindslist_accent.Visible = window.spectatorlist.visible
+                keybindslist_title.Visible = window.spectatorlist.visible
+                --
+                for i,v in pairs(window.spectatorlist.keybinds) do
+                    v:Visibility()
+                end
+            end
+            --
+            function window.keybindslist:Update(updateType, updateValue)
+                if updateType == "Visible" then
+                    window.spectatorlist.visible = updateValue
+                    window.spectatorlist:Visibility()
+                end
+            end
+            --
+            utility:Connection(ws.CurrentCamera:GetPropertyChangedSignal("ViewportSize"),function()
+                keybindslist_outline.Position = utility:Position(0, 10, 0.4, 0)
+                keybindslist_inline.Position = utility:Position(0, 1, 0, 1, keybindslist_outline)
+                keybindslist_frame.Position = utility:Position(0, 1, 0, 1, keybindslist_inline)
+                keybindslist_accent.Position = utility:Position(0, 0, 0, 0, keybindslist_frame)
+                keybindslist_title.Position = utility:Position(0.5, 0, 0, 5, keybindslist_outline)
+                --
+                window.spectatorlist:Resort()
+            end)
+        end
         --
         function window:Cursor(info)
             window.cursor = {}
