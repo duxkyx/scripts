@@ -448,14 +448,12 @@ do
             local config = {}
             --
             for i,v in pairs(library.pointers) do
-		pcall(function()
-		        if typeof(v:Get()) == "table" and v:Get().Transparency then
-			    local hue, sat, val = v:Get().Color:ToHSV()
-			    config[i] = {Color = {hue, sat, val}, Transparency = v:Get().Transparency}
-			else
-			    config[i] = v:Get()
-			end		
-		end)
+		if typeof(v:Get()) == "table" and v:Get().Transparency then
+		    local hue, sat, val = v:Get().Color:ToHSV()
+		    config[i] = {Color = {hue, sat, val}, Transparency = v:Get().Transparency}
+		else
+		    config[i] = v:Get()
+		end		
             end
             --
             return game:GetService("HttpService"):JSONEncode(config)
