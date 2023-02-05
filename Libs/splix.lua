@@ -611,7 +611,7 @@ do
         end
         --
         function window:Watermark(info)
-            window.watermark = {visible = true}
+            window.watermark = {visible = false}
             --
             local info = info or {}
             local watermark_name = info.name or info.Name or info.title or info.Title or string.format("$$ Splix || uid : %u || ping : %u || fps : %u", 1, 100, 200)
@@ -693,12 +693,12 @@ do
                 library.shared.ping = tonumber(string.split(stats.Network.ServerStatsItem["Data Ping"]:GetValueString(), " ")[1] .. "")
             end)
             --
-            watermark_title.Text = string.format("$$ Splix || uid : %u || ping : %i || fps : %u", 1, tostring(library.shared.ping), library.shared.fps)
+            watermark_title.Text = string.format("$$ Splix | uid : %u | ping : %i | fps : %u", 1, tostring(library.shared.ping), library.shared.fps)
             window.watermark:UpdateSize()
             --
             spawn(function()
                 while wait(0.1) do
-                    watermark_title.Text = string.format("Duxkyx-Ware || %s || ping : %i || fps : %i", getgenv().tags, tostring(library.shared.ping), library.shared.fps)
+                    watermark_title.Text = string.format("Duxkyx-Ware | %s | ping : %i | fps : %i", getgenv().tags, tostring(library.shared.ping), library.shared.fps)
                     window.watermark:UpdateSize()
                 end
             end)
@@ -707,7 +707,7 @@ do
         end
         --
         function window:KeybindsList(info)
-            window.keybindslist = {visible = true, keybinds = {}}
+            window.keybindslist = {visible = false, keybinds = {}}
             --
             local info = info or {}
             --
