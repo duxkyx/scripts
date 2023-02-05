@@ -611,7 +611,7 @@ do
         end
         --
         function window:Watermark(info)
-            window.watermark = {visible = false}
+            window.watermark = {visible = true}
             --
             local info = info or {}
             local watermark_name = info.name or info.Name or info.title or info.Title or string.format("$$ Splix || uid : %u || ping : %u || fps : %u", 1, 100, 200)
@@ -707,7 +707,7 @@ do
         end
         --
         function window:KeybindsList(info)
-            window.keybindslist = {visible = false, keybinds = {}}
+            window.keybindslist = {visible = true, keybinds = {}}
             --
             local info = info or {}
             --
