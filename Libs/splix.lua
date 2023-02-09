@@ -698,7 +698,7 @@ do
             --
             spawn(function()
                 while wait(0.1) do
-                    watermark_title.Text = string.format("Duxkyx-Ware | %s | ping : %i | fps : %i", getgenv().tags, tostring(library.shared.ping), library.shared.fps)
+                    watermark_title.Text = string.format("Duxkyx-Ware | UID: %s | ping : %i | fps : %i", getgenv().tags, tostring(library.shared.ping), library.shared.fps)
                     window.watermark:UpdateSize()
                 end
             end)
