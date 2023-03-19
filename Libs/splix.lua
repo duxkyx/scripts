@@ -2648,6 +2648,37 @@ do
 	function dropdown:Clear()
 	    table.clear(options)
 	end
+		
+	function dropdown:Refresh(newoptions)
+		 for i,v in pairs(dropdown.holder.drawings) do
+		    utility:Remove(v)
+		end
+		--
+		dropdown.holder.drawings = {}
+		dropdown.holder.buttons = {}
+		dropdown.holder.inline = nil
+		--
+		window.currentContent.frame = nil
+		window.currentContent.dropdown = nil
+			
+		 for i,v in pairs(newoptions) do
+		    local dropdown_value_frame = utility:Create("Frame", {Vector2.new(1,1 + (19 * (i-1))), dropdown_open_inline}, {
+			Size = utility:Size(1, -2, 0, 18, dropdown_open_inline),
+			Position = utility:Position(0, 1, 0, 1 + (19 * (i-1)), dropdown_open_inline),
+			Color = theme.light_contrast,
+			Visible = page.open
+		    }, dropdown.holder.drawings)
+		    local dropdown_value = utility:Create("TextLabel", {Vector2.new(v == tostring(dropdown.current) and 8 or 6,2), dropdown_value_frame}, {
+			Text = v,
+			Size = theme.textsize,
+			Font = theme.font,
+			Color = v == tostring(dropdown.current) and theme.accent or theme.textcolor,
+			OutlineColor = theme.textborder,
+			Position = utility:Position(0, v == tostring(dropdown.current) and 8 or 6, 0, 2, dropdown_value_frame),
+			Visible = page.open
+		    }, dropdown.holder.drawings);dropdown.holder.buttons[#dropdown.holder.buttons + 1] = {dropdown_value, dropdown_value_frame}
+		end
+	end
         --
         library.began[#library.began + 1] = function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and window.isVisible and dropdown_outline.Visible then
