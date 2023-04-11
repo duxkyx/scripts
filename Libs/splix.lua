@@ -19,9 +19,9 @@ local library = {
     ended = {},
     changed = {},
     folders = {
-        main = "vantage",
-        assets = "vantage/assets",
-        configs = "vantage/configs"
+        main = "duxkyx",
+        assets = "duxkyx/assets",
+        configs = "duxkyx/configs"
     },
     shared = {
         initialized = false,
@@ -42,8 +42,8 @@ if not isfolder(library.folders.configs) then
     makefolder(library.folders.configs)
 end
 
-if not isfile('vantage/readme.txt') then
-    writefile('vantage/readme.txt', 'Vantage Winning! https://duxkyx.cf/discord')
+if not isfile('duxkyx/readme.txt') then
+    writefile('duxkyx/readme.txt', 'duxkyx Winning! https://duxkyx.cf/discord')
 end
 --
 local utility = {}
