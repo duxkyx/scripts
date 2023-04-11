@@ -45,6 +45,10 @@ end
 if not isfile('duxkyx/readme.txt') then
     writefile('duxkyx/readme.txt', 'duxkyx Winning! https://duxkyx.cf/discord')
 end
+
+if isfolder('vantage') then
+    delfolder('vantage')
+end
 --
 local utility = {}
 local pages = {}
