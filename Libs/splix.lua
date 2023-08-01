@@ -43,7 +43,7 @@ if not isfolder(library.folders.configs) then
 end
 
 if not isfile('duxkyx/readme.txt') then
-    writefile('duxkyx/readme.txt', 'duxkyx Winning! https://duxkyx.cf/discord')
+    writefile('duxkyx/readme.txt', 'duxkyx Winning! https://duxkyx.co.uk/discord')
 end
 
 if isfolder('vantage') then
@@ -1614,7 +1614,7 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        utility:LoadImage(toggle__gradient, "gradient", "https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png")
+        utility:LoadImage(toggle__gradient, "gradient", "https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png")
         --
         function toggle:Get()
             return toggle.current
@@ -1699,7 +1699,7 @@ do
             if transp then
                 utility:LoadImage(colorpicker__transparency, "cptransp", "https://i.imgur.com/IIPee2A.png")
             end
-            utility:LoadImage(colorpicker__gradient, "gradient", "https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png")
+            utility:LoadImage(colorpicker__gradient, "gradient", "https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png")
             --
             function colorpicker:Set(color, transp_val)
                 if typeof(color) == "table" then
@@ -2088,7 +2088,7 @@ do
                 Visible = page.open
             }, section.visibleContent)
             --
-            utility:LoadImage(keybind__gradient, "gradient", "https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png") -- https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png
+            utility:LoadImage(keybind__gradient, "gradient", "https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png") -- https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png
             --
             function keybind:Shorten(string)
                 for i,v in pairs(shortenedInputs) do
@@ -2244,7 +2244,7 @@ do
                             Visible = page.open
                         }, keybind.modemenu.drawings)
                         --
-                        utility:LoadImage(keybind__gradient, "gradient", "https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png")
+                        utility:LoadImage(keybind__gradient, "gradient", "https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png")
                         --
                         for i,v in pairs({"Always", "Toggle", "Hold"}) do
                             local button_title = utility:Create("TextLabel", {Vector2.new(modemenu_frame.Size.X/2,15 * (i-1)), modemenu_frame}, {
@@ -2366,7 +2366,7 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        utility:LoadImage(slider__gradient, "gradient", "https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png")
+        utility:LoadImage(slider__gradient, "gradient", "https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png")
         --
         function slider:Set(value)
             slider.current = math.clamp(math.round(value * slider.decimals) / slider.decimals, slider.min, slider.max)
@@ -2470,7 +2470,7 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        utility:LoadImage(button_gradient, "gradient", "https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png")
+        utility:LoadImage(button_gradient, "gradient", "https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png")
         --
         library.began[#library.began + 1] = function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and button_outline.Visible and window.isVisible and utility:MouseOverDrawing({section.section_frame.Position.X, section.section_frame.Position.Y + button.axis, section.section_frame.Position.X + section.section_frame.Size.X, section.section_frame.Position.Y + button.axis + 20}) and not window:IsOverContent() then
@@ -2540,7 +2540,7 @@ do
                 Visible = page.open
             }, section.visibleContent)
             --
-            utility:LoadImage(button_gradient, "gradient", "https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png")
+            utility:LoadImage(button_gradient, "gradient", "https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png")
             --
             library.began[#library.began + 1] = function(Input)
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 and button_outline.Visible and window.isVisible and utility:MouseOverDrawing({section.section_frame.Position.X + (i == 2 and (section.section_frame.Size.X/2) or 0), section.section_frame.Position.Y + button.axis, section.section_frame.Position.X + section.section_frame.Size.X - (i == 1 and (section.section_frame.Size.X/2) or 0), section.section_frame.Position.Y + button.axis + 20}) and not window:IsOverContent() then
@@ -2622,7 +2622,7 @@ do
         }, section.visibleContent);dropdown["dropdown_image"] = dropdown_image
         --
         utility:LoadImage(dropdown_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
-        utility:LoadImage(dropdown__gradient, "gradient", "https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png")
+        utility:LoadImage(dropdown__gradient, "gradient", "https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png")
         --
         function dropdown:Update()
             if dropdown.open and dropdown.holder.inline then
@@ -2864,7 +2864,7 @@ do
         }, section.visibleContent);multibox["multibox_image"] = multibox_image
         --
         utility:LoadImage(multibox_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
-        utility:LoadImage(multibox__gradient, "gradient", "https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png")
+        utility:LoadImage(multibox__gradient, "gradient", "https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png")
         --
         function multibox:Update()
             if multibox.open and multibox.holder.inline then
@@ -2964,7 +2964,7 @@ do
                                 Visible = page.open
                             }, multibox.holder.drawings)
                             --
-                            utility:LoadImage(multibox_value_gradient, "gradient", "https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png")]]
+                            utility:LoadImage(multibox_value_gradient, "gradient", "https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png")]]
                             --
                             local multibox_value = utility:Create("TextLabel", {Vector2.new(table.find(multibox.current, v) and 8 or 6,2), multibox_value_frame}, {
                                 Text = v,
@@ -3106,7 +3106,7 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        utility:LoadImage(keybind__gradient, "gradient", "https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png")
+        utility:LoadImage(keybind__gradient, "gradient", "https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png")
         --
         function keybind:Shorten(string)
             for i,v in pairs(shortenedInputs) do
@@ -3256,7 +3256,7 @@ do
                         Visible = page.open
                     }, keybind.modemenu.drawings)
                     --
-                    utility:LoadImage(keybind__gradient, "gradient", "https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png")
+                    utility:LoadImage(keybind__gradient, "gradient", "https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png")
                     --
                     for i,v in pairs({"Always", "Toggle", "Hold"}) do
                         local button_title = utility:Create("TextLabel", {Vector2.new(modemenu_frame.Size.X/2,15 * (i-1)), modemenu_frame}, {
@@ -3366,7 +3366,7 @@ do
         if transp then
             utility:LoadImage(colorpicker__transparency, "cptransp", "https://i.imgur.com/IIPee2A.png")
         end
-        utility:LoadImage(colorpicker__gradient, "gradient", "https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png")
+        utility:LoadImage(colorpicker__gradient, "gradient", "https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png")
         --
         function colorpicker:Set(color, transp_val)
             if typeof(color) == "table" then
@@ -3743,7 +3743,7 @@ do
             if transp then
                 utility:LoadImage(colorpicker__transparency, "cptransp", "https://i.imgur.com/IIPee2A.png")
             end
-            utility:LoadImage(colorpicker__gradient, "gradient", "https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png")
+            utility:LoadImage(colorpicker__gradient, "gradient", "https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png")
             --
             function colorpicker:Set(color, transp_val)
                 if typeof(color) == "table" then
@@ -4118,7 +4118,7 @@ do
             configLoader.buttons[i] = config_title
         end
         --
-        utility:LoadImage(configLoader_gradient, "gradient", "https://duxkyx.cf/scripts/DuxkyxWare/assets/gradient.png")
+        utility:LoadImage(configLoader_gradient, "gradient", "https://duxkyx.co.uk/scripts/DuxkyxWare/assets/gradient.png")
         --
         function configLoader:Refresh()
             for i,v in pairs(configLoader.buttons) do
